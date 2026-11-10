@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nick Marmillion · Product Design</title>
+<meta name="description" content="Nick Marmillion designs and builds tools people actually enjoy using.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --ink: #1c1b1a;
+    --muted: #6b6762;
+    --line: #e6e1da;
+    --accent: #d9488f;
+    --card: #ffffff;
+    --todo-bg: #fff1f7;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.65 Inter, system-ui, -apple-system, sans-serif;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  .wide { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header.top { padding: 28px 0; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  header.top .name { font-weight: 600; letter-spacing: -0.01em; }
+  header.top nav a { margin-left: 18px; font-size: 15px; color: var(--muted); text-decoration: none; }
+  header.top nav a:first-child { margin-left: 0; }
+  header.top nav a:hover { color: var(--accent); }
+
+  .hero { padding: 64px 0 56px; }
+  .hero h1 {
+    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+    font-size: clamp(40px, 7vw, 64px); line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 20px;
+  }
+  .hero h1 em { color: var(--accent); }
+  .hero p { font-size: 19px; color: var(--muted); max-width: 580px; margin: 0; }
+
+  section.project { border-top: 1px solid var(--line); padding: 64px 0; }
+  .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+  h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); line-height: 1.1; margin: 0 0 14px; }
+  h3 { font-size: 17px; font-weight: 600; margin: 40px 0 8px; }
+  .lede { font-size: 19px; color: var(--muted); margin: 0 0 28px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); margin-bottom: 36px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  figure { margin: 32px 0; }
+  figure img { border-radius: 12px; border: 1px solid var(--line); background: var(--card); }
+  figcaption { font-size: 14px; color: var(--muted); margin-top: 10px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .pair .label { font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+
+  ol.steps { padding-left: 1.2em; }
+  ol.steps li { margin-bottom: 8px; }
+  ul.details { padding-left: 1.2em; }
+  ul.details li { margin-bottom: 10px; }
+
+  .todo {
+    background: var(--todo-bg); border: 1.5px dashed var(--accent); border-radius: 10px;
+    padding: 12px 16px; font-size: 15px; color: #8a2457; margin: 16px 0;
+  }
+  .todo::before { content: "To fill in: "; font-weight: 600; }
+
+  .pair img.stack { margin-top: 14px; }
+  figure.video video { width: 100%; max-width: 640px; aspect-ratio: 4 / 3; display: block; border-radius: 12px; background: #000; }
+  .tools { font-size: 14px; color: var(--muted); margin-top: 32px; }
+
+  footer { border-top: 1px solid var(--line); padding: 56px 0 72px; }
+  footer h2 { margin-bottom: 8px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .pair { grid-template-columns: 1fr; }
+    .hero { padding: 40px 0 40px; }
+    section.project { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="name">Nick Marmillion</span>
+    <nav>
+      <a href="#swapper">Work</a>
+      <a href="#about">About</a>
+      <a href="mailto:nickmarmillion@gmail.com">Email</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>I design and build tools that <em>feel easy</em>, even when the tech underneath isn't.</h1>
+    <p>Self-taught builder and video director in Boise, Idaho. I use AI coding tools to take ideas from a sketch to something people actually use.</p>
+  </div>
+</div>
+
+<!-- Project 1 -->
+<section class="project" id="swapper">
+  <div class="wrap">
+    <p class="eyebrow">Case study · Mac app</p>
+    <h2>Background Swapper</h2>
+    <p class="lede">A Mac app that swaps the background behind a person in a video, designed so a non-technical person can see and fix the AI's mistakes instead of just hoping it worked.</p>
+    <div class="meta">
+      <span><b>Role</b> Designer and builder</span>
+      <span><b>Built with</b> Python, PySide6, PyTorch, ffmpeg</span>
+      <span><b>Year</b> 2026</span>
+    </div>
+
+    <div class="pair">
+      <div><div class="label">Before</div><img src="images/swapper-before.png" alt="Original clip: Nick in front of a floral wallpaper"></div>
+      <div><div class="label">After</div><img src="images/swapper-after.png" alt="Swapped clip: Nick in front of a forest and lake"></div>
+    </div>
+
+    <h3>The problem</h3>
+    <p>I make music videos to songs I love, and I wanted to level up my editing. The tools that swap a background behind a person all wanted a monthly subscription, and most of them process your footage online.</p>
+    <p>I wanted something local that was mine. So I built my own with AI coding tools: an app that runs entirely on my Mac and plugs straight into how I already edit.</p>
+
+    <h3>The key decision: let people check the AI's work</h3>
+    <p>The AI step is slow, so the app runs it once, then lets you review and fix the result before the final render. The final render has no AI in it, so fixing a mistake costs seconds, not another full run.</p>
+    <ol class="steps">
+      <li><b>Setup.</b> Drop in your clip and a new background.</li>
+      <li><b>Review.</b> See an outline of what the AI thinks is you, and fix the spots where it's wrong.</li>
+      <li><b>Result.</b> Watch it, jump back to adjust, or start over.</li>
+    </ol>
+  </div>
+
+  <div class="wide">
+    <figure>
+      <img src="images/swapper-v2-outline.png" alt="Review screen styled like a camcorder viewfinder, with a blue outline around the person, a timeline, and a render button">
+      <figcaption>The review screen. The blue outline shows what the AI found. If it's wrong, you drag a box around yourself and anything outside it is dropped.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <h3>Small choices that make it easy</h3>
+    <ul class="details">
+      <li><b>Numbered drop zones.</b> "1. Your video" and "2. New background" make the order obvious. The Swap button stays grey until both are in.</li>
+      <li><b>Plain-words progress.</b> "Finding you in every frame… 42%", not "processing".</li>
+      <li><b>It points you to problems.</b> The timeline marks spots where the AI looks unsure, so you don't have to scrub the whole clip.</li>
+      <li><b>One gesture to fix.</b> Drag a box around yourself. No masks, brushes or jargon.</li>
+      <li><b>Always a way back.</b> "Adjust boxes" returns you to review with your fixes kept.</li>
+    </ul>
+
+    <h3>Version 2: making it fun to use</h3>
+    <p>Version 1 worked, but it felt like a utility. I make videos for fun, so the tool should feel fun too. I redesigned it as a soft pastel camcorder: your clip and background are "tapes," the status light reads standby or rec, and the review screen looks like a viewfinder with a timecode and date stamp.</p>
+    <p>I went through a few rounds to get there. A dark 80s camcorder look came first, and it felt heavy instead of playful, so I dropped it. The final version keeps it gender neutral with baby blue, mint and butter yellow, and sets everything in an old-book serif with no italics so it stays easy to read.</p>
+    <p>The flow didn't change. Same three steps, same one gesture to fix a mistake. Only the feel did.</p>
+  </div>
+
+  <div class="wide">
+    <div class="pair">
+      <div><div class="label">Version 1</div><img src="images/swapper-setup.png" alt="Version 1 setup screen, plain grey design"></div>
+      <div><div class="label">Version 2</div><img src="images/swapper-v2-setup.png" alt="Version 2 setup screen with blue and mint tape drop zones and a periwinkle swap button"></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h3>What I'd do differently</h3>
+    <p>I'd turn it into a web app hosted for free on GitHub. Anyone could use it right in their browser, with nothing to install, and sharing it would be as easy as sending a link. I'd also make it lighter on memory, so it doesn't take over my computer while it works.</p>
+
+    <h3>Result</h3>
+    <p>A one-minute clip takes about three minutes, start to finish, entirely on my Mac. No subscription and no uploads.</p>
+
+    <p class="tools">Runs the AI model on the Mac itself, with no uploads. Streams frames so 4K clips render on 8 GB of RAM. Built by directing an AI coding assistant.</p>
+  </div>
+</section>
+
+<!-- Project 2 -->
+<section class="project" id="homepage">
+  <div class="wrap">
+    <p class="eyebrow">Web design</p>
+    <h2>Homepage redesign</h2>
+    <p class="lede">Re-themed the website of a geological and mining supply company in a hand-drawn style that matches its mule logo. The mule shows up across every section, so the whole site reads as one brand instead of a parts catalog.</p>
+    <div class="meta">
+      <span><b>Role</b> Designer</span>
+      <span><b>Built in</b> Odoo website builder</span>
+      <span><b>Year</b> 2026</span>
+    </div>
+    <h3>What I did</h3>
+    <p>I gave CGS Mule a brand personality. They already had an amazing logo with a specific art style, and the mule. In the geology world, they're known for that mule.</p>
+    <p>So I took the color palette and the art style from their existing logo and themed the whole website around it.</p>
+  </div>
+
+  <div class="wide">
+    <figure>
+      <div class="pair">
+        <div><div class="label">Before · Aug 2026</div><img src="images/homepage-before.jpg" alt="Old homepage: a stock photo slider of a drill rig with the slogan We have a passion for your work, and a blue Explore Our Products banner" loading="lazy"></div>
+        <div><div class="label">After</div><img src="images/homepage-hero.jpg" alt="New homepage: a hand-drawn desert scene with a mule on a ridge, rock hammer and sample bag, and the headline Geological and Mining Supplies for Every Stage of Exploration" loading="lazy"></div>
+      </div>
+      <figcaption>The first screen, before and after. A generic stock-photo slider became a clear headline that says what the company sells, two actions (shop or request a quote), and an illustration that matches the mule logo.</figcaption>
+    </figure>
+    <figure>
+      <div class="pair">
+        <div><div class="label">Before</div><img src="images/homepage-before-products.jpg" alt="Old product section: one stock photo per category with a heading and an Explore button, separated by large empty gaps" loading="lazy"></div>
+        <div><div class="label">After</div><img src="images/homepage-bestsellers.jpg" alt="New Best Sellers section: three product cards for sample bags, blades and a core saw" loading="lazy"><img class="stack" src="images/homepage-categories.jpg" alt="New Shop by Category section: six cards for sample bags, field supplies, core storage, surveying and staking, lab equipment and mine safety" loading="lazy"></div>
+      </div>
+      <figcaption>Products, before and after. Long rows of stock photos became clean product cards: three best sellers, then every category in one grid.</figcaption>
+    </figure>
+    <div class="pair">
+      <figure><img src="images/homepage-strikelog.jpg" alt="StrikeLog spotlight: Scan it. Log it. Done. next to a handheld scanner app, with a mule in a drilling landscape" loading="lazy"><figcaption>A product spotlight with a three-beat headline.</figcaption></figure>
+      <figure><img src="images/homepage-muleshed.jpg" alt="Mule Shed spotlight: a shipping container core-cutting room with mule decals on a topographic map background" loading="lazy"><figcaption>The Mule Shed, framed on a topo-map background.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h3>The CoreLift page, from scratch</h3>
+    <p>There was no CoreLift page before. I designed the whole thing. I pulled the green from CoreLift's own logo and made it the base of the hero, so their brand leads.</p>
+    <p>CGS Mule is marketing its Mule Shed right now, so I worked the shed into the same hero scene. It gives the shed more visibility without taking anything away from CoreLift.</p>
+    <p>And the mule had to be there. It's CGS Mule's mascot, so I added it right into the scene, next to the equipment.</p>
+  </div>
+
+  <div class="wide">
+    <figure>
+      <img src="images/homepage-corelift.jpg" alt="CoreLift page hero: green CoreLift branding, core trays on a logging table, the Mule Shed container behind, and a mule in a hard hat" loading="lazy">
+      <figcaption>The CoreLift hero. Their green leads, the Mule Shed sits in the scene, and the mascot sets the tone.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Project 3 -->
+<section class="project" id="video">
+  <div class="wrap">
+    <p class="eyebrow">Direction</p>
+    <h2>Music video</h2>
+    <p class="lede">Conceived, directed and shot a music video for Caroline Manning, a singer-songwriter with 1.4 million YouTube subscribers, from concept through final footage.</p>
+    <figure class="video">
+      <video controls playsinline preload="none" poster="images/music-video-poster.jpg">
+        <source src="images/music-video.mp4" type="video/mp4">
+      </video>
+      <figcaption>Posted on Caroline Manning's Instagram, where it has 208K views.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>I studied business at Boise State (B.S., magna cum laude, 2026) and taught myself to build software along the way. I care about how things feel to use, and I like making complicated tools feel simple.</p>
+    <p><a href="mailto:nickmarmillion@gmail.com">nickmarmillion@gmail.com</a> · <a href="https://linkedin.com/in/nick-marmillion">LinkedIn</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
